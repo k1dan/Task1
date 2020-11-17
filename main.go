@@ -7,17 +7,6 @@ import (
 	"task1/sorting"
 )
 
-func strToInt(records []string) []int {
-
-	var intSlice []int
-
-	for _, v := range records {
-		s, _ := strconv.Atoi(v)
-		intSlice = append(intSlice, s)
-	}
-	return intSlice
-}
-
 func main() {
 	fmt.Println("Insert numbers to sort. Numbers should be separated by commas, without spaces:")
 
