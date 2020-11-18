@@ -10,14 +10,14 @@ import (
 func main() {
 	fmt.Println("Insert numbers to sort. Numbers should be separated by commas, without spaces:")
 
-	var numbers []int
+	var numbers []float64
 	var in string
 
 	fmt.Scanln(&in)
 	input := strings.Split(in, ",")
 
 	for _, v := range input {
-		s, _ := strconv.Atoi(v)
+		s, _ := strconv.ParseFloat(v, 64)
 		numbers = append(numbers, s)
 	}
 
