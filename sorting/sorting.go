@@ -4,7 +4,7 @@ package sorting
 	BubbleSort algorith simply swaps nearest
 	elements if they at at wrong position
 */
-func BubbleSort(numbers *[]int) {
+func BubbleSort(numbers *[]float64) {
 	for i := 0; i < len(*numbers); i++ {
 		for j := 1; j < len(*numbers)-i-1; j++ {
 			if (*numbers)[j] > (*numbers)[j+1] {
@@ -19,7 +19,7 @@ func BubbleSort(numbers *[]int) {
 	BubbleSort algorith, but despite BubbleSort
 	slice traversing appears in both directions
 */
-func CocktailSort(numbers *[]int) {
+func CocktailSort(numbers *[]float64) {
 	for {
 		swapped := false
 		for i := 0; i < len(*numbers)-1; i++ {
@@ -49,7 +49,7 @@ func CocktailSort(numbers *[]int) {
 	unsorted and place value from unsorted part by
 	comparing with values from sorted part
 */
-func InsertionSort(numbers *[]int) {
+func InsertionSort(numbers *[]float64) {
 	for i := 1; i < len(*numbers); i++ {
 		j := i
 		for j > 0 {
@@ -69,7 +69,7 @@ func InsertionSort(numbers *[]int) {
 	element from unsorted array is picked and moved
 	to sorted part
 */
-func SelectionSort(numbers *[]int) {
+func SelectionSort(numbers *[]float64) {
 	for i := 0; i < len(*numbers)-1; i++ {
 		for j := i + 1; j < len(*numbers); j++ {
 			if (*numbers)[j] < (*numbers)[i] {
@@ -86,7 +86,7 @@ func SelectionSort(numbers *[]int) {
 	and then merges sorted halves. Implementation includes
 	2 functions: Merge and MergeSort
 */
-func MergeSort(numbers *[]int) {
+func MergeSort(numbers *[]float64) {
 	RMergeSort(numbers, 0, len(*numbers)-1)
 }
 
@@ -94,7 +94,7 @@ func MergeSort(numbers *[]int) {
 	RMergeSort function call itself for left and
 	right hals and then merge those halfs
 */
-func RMergeSort(numbers *[]int, start int, end int) {
+func RMergeSort(numbers *[]float64, start int, end int) {
 	if start < end {
 		middle := (start + end) / 2
 		RMergeSort(numbers, start, middle)
@@ -107,10 +107,10 @@ func RMergeSort(numbers *[]int, start int, end int) {
 	Merge fucntion merges halfs by comparing them and
 	putting at the right place at sorting slice
 */
-func Merge(numbers *[]int, start int, middle int, end int) {
+func Merge(numbers *[]float64, start int, middle int, end int) {
 	sizeLeft := middle - start + 1
 	sizeRight := end - middle
-	var leftSlice, rightSlice []int
+	var leftSlice, rightSlice []float64
 	for i := 0; i < sizeLeft; i++ {
 		leftSlice = append(leftSlice, (*numbers)[start+i])
 	}
@@ -150,7 +150,7 @@ func Merge(numbers *[]int, start int, middle int, end int) {
 	right side, and then calls itself to the left and
 	right halfs
 */
-func QuickSort(numbers *[]int) {
+func QuickSort(numbers *[]float64) {
 	Sort(&(*numbers), 0, len(*numbers)-1)
 }
 
@@ -158,7 +158,7 @@ func QuickSort(numbers *[]int) {
 	For this function pivot element is the last element of
 	slice
 */
-func Sort(numbers *[]int, start, end int) {
+func Sort(numbers *[]float64, start, end int) {
 	if (end - start) < 1 {
 		return
 	}
